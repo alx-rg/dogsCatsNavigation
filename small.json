@@ -1,0 +1,44 @@
+{
+  "cat_breeds": {
+    "Abyssinian": {
+      "Affectionate with Family": 3,
+      "Amount of Shedding": 3,
+      "Easy to Groom": 3,
+      "General Health": 2
+    },
+    "American Bobtail": {
+      "Affectionate with Family": 4,
+      "Kid Friendly": 4,
+      "Pet Friendly": 4,
+      "Potential for Playfulness": 4,
+      "Tendency to Vocalize": 3
+    },
+    "American Curl": {
+      "General Health": 5,
+      "Kid Friendly": 4,
+      "Pet Friendly": 4,
+      "Potential for Playfulness": 4,
+      "Tendency to Vocalize": 5
+    }
+  },
+  "dog_breeds": {
+    "Affenpinscher": {
+      "Adaptability": 3,
+      "Prey Drive": 3,
+      "Sensitivity Level": 3,
+      "Size": 1,
+      "Tendency To Bark Or Howl": 2,
+      "Tolerates Being Alone": 1,
+      "Wanderlust Potential": 2
+    },
+    "Afghan Hound": {
+      "Adaptability": 4,
+      "All Around Friendliness": 4,
+      "Tendency To Bark Or Howl": 2,
+      "Tolerates Being Alone": 2,
+      "Tolerates Cold Weather": 5,
+      "Tolerates Hot Weather": 5,
+      "Wanderlust Potential": 5
+    }
+  }
+}

@@ -1,12 +1,66 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 
-function DetailsScreen() {
- return (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  <Text>Details Screen</Text>
-  </View>
- );
+export default function Item({ data, species }) {
+  const { breed } = data;
+  const characteristics = Object.keys(data[species][breed]);
+
+  return (
+    <View style={styles.item}>
+      <Text style={styles.title}>{breed}</Text>
+      <FlatList
+        data={characteristics}
+        renderItem={({ item, index }) => (
+          <View
+            style={[
+              styles.propertyContainer,
+              { backgroundColor: index % 2 === 0 ? "#D3D3D3" : "#fff" },
+            ]}
+            key={item}
+          >
+            <Text style={styles.propertyName}>{item}</Text>
+            <View style={styles.propertyValue}>
+              {[...Array(data[species][breed][item])].map((_, i) => (
+                <Text key={i} style={styles.star}>
+                  ★
+                </Text>
+              ))}
+            </View>
+          </View>
+        )}
+        keyExtractor={(item) => item}
+      />
+    </View>
+  );
 }
 
-export default DetailsScreen;
+const styles = StyleSheet.create({
+  item: {
+    marginVertical: 8,
+    marginHorizontal: 4,
+  },
+  title: {
+    fontSize: 32,
+  },
+  propertyContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    paddingHorizontal: 20,
+  },
+  propertyName: {
+    fontSize: 13,
+    fontWeight: "bold",
+    marginRight: 10,
+  },
+  propertyValue: {
+    flexShrink: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  star: {
+    paddingTop: 3,
+    fontSize: 8,
+    marginRight: 5,
+  },
+});
